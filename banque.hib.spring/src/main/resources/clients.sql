@@ -1,0 +1,14 @@
+insert into Client (nom, prenom) values ('Troadec', 'Nolwenn');
+insert into Client (nom, prenom) values ('Leblanc', 'Marc');
+insert into Client (nom, prenom) values ('Martin', 'Leandre');
+insert into Client (nom, prenom) values ('Lenoir', 'Sophie');
+insert into Client (nom, prenom) values ('Legac', 'Erwann');
+insert into Client (nom, prenom) values ('Lebreton', 'Solenn');
+insert into Client (nom, prenom) values ('Meyer', 'Nils');
+insert into Client (nom, prenom) values ('Durand', 'Marie');
+insert into Client (nom, prenom) values ('Scheidt', 'Robert');
+insert into Client (nom, prenom) values ('Ainslie', 'Ben');
+insert into Client (nom, prenom) values ('Richard', 'Mathieu');
+insert into Client (nom, prenom) values ('Bolt', 'Usain');
+insert into Client (nom, prenom) values ('Loeb', 'Sébastien');
+commit;

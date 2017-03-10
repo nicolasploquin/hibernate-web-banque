@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="fr.eni.formation.banque">
+
+	<class name="Client">
+
+		<id name="idClient">
+			<generator class="identity" />
+		</id>
+
+		<property name="nom" not-null="true" />
+		<property name="prenom" />
+	
+		<component name="adresse" class="Adresse">
+			<property name="rue" type="string"/>
+			<property name="codePostal" type="string"/>
+			<property name="ville" type="string"/>
+		</component>
+		
+		<set name="comptes" cascade="all" >
+			<key column="idClient" />
+			<one-to-many class="Compte" />
+		</set> 
+		
+	</class>
+	
+</hibernate-mapping>

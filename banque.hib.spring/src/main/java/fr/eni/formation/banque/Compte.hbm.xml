@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="fr.eni.formation.banque">
+
+	<class name="Compte">
+
+		<id name="idCompte">
+			<generator class="identity" />
+		</id>
+
+		<property name="numero" />
+		
+		<property name="solde"> 
+			<formula>(select ifnull(sum(ope.montant),0) from Operation ope where ope.idCompte = idCompte)</formula>
+		</property>
+		
+		<many-to-one name="client" class="Client" column="idClient" />
+		
+		<bag name="operations" cascade="all" >
+			<key column="idCompte" />
+			<one-to-many class="Operation" />
+		</bag> 
+		
+	
+	</class>
+	
+</hibernate-mapping>

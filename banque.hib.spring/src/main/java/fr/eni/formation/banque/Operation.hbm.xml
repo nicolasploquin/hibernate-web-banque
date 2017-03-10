@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="fr.eni.formation.banque">
+
+	<class name="Operation">
+		<id name="idOperation">
+			<generator class="identity" />
+		</id>
+		
+		<discriminator column="type" type="string"/>
+
+		<property name="date" />
+		<property name="libelle" />
+		<property name="montant" />
+
+		<subclass name="Debit" discriminator-value="Debit">
+		</subclass>
+		
+		<subclass name="Credit" discriminator-value="Credit">
+		</subclass> 
+	
+	</class>
+	
+</hibernate-mapping>
